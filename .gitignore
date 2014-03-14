@@ -1,8 +1,5 @@
 *.py[cod]
-<<<<<<< HEAD
 *~
-=======
->>>>>>> 3d414ff7f7c1b6b0a5597de387cd530d954fa0a2
 
 # C extensions
 *.so
@@ -21,11 +18,7 @@ develop-eggs
 .installed.cfg
 lib
 lib64
-<<<<<<< HEAD
 local
-=======
-__pycache__
->>>>>>> 3d414ff7f7c1b6b0a5597de387cd530d954fa0a2
 
 # Installer logs
 pip-log.txt
@@ -37,16 +30,12 @@ nosetests.xml
 
 # Translations
 *.mo
-<<<<<<< HEAD
 src/locale
-=======
->>>>>>> 3d414ff7f7c1b6b0a5597de387cd530d954fa0a2
 
 # Mr Developer
 .mr.developer.cfg
 .project
 .pydevproject
-<<<<<<< HEAD
 .idea
 
 
@@ -60,5 +49,5 @@ project_template/backend/venv/lib
 project_template/backend/venv/local
 project_template/backend/venv/.pip_download_cache
 project_template/backend/src/lib
-=======
->>>>>>> 3d414ff7f7c1b6b0a5597de387cd530d954fa0a2
+
+
