@@ -3,11 +3,11 @@ from google.appengine.ext import ndb
 
 __author__ = 'ariane'
 
-class Usuario (ndb.Model):
-    nome=ndb.StringProperty()
-    email=ndb.StringProperty()
-    google_id=ndb.StringProperty()
+class Usuario(ndb.Model):
+	nome=ndb.StringProperty()
+	email=ndb.StringProperty()
+	google_id=ndb.StringProperty()
 
-    @classmethod
-    def query_by_google(cls, google_id):
-        return cls.query(cls.google_id==google_id)
+	@classmethod
+	def query_by_google(cls, google_id):
+		return cls.query(cls.google_id==google_id)

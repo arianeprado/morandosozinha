@@ -1,0 +1,27 @@
+<div class='container' >
+    <div class="span12">
+        <h4 class="span10">***** Usuários cadastrados *****</h4>
+        <table class="span10 table table-striped" style="text-align:center">
+            <th>Nome</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Senha</th>
+            <th>dia</th>
+            <th>mês</th>
+            <th>ano</th>
+            <th>sex</th>
+            {% for m in cad %}
+            <tr>
+                <td>{{ m.firstname }}</td>
+                <td>{{ m.user }}</td>
+                <td>{{ m.email }}</td>
+                <td>{{ m.senha}}</td>
+                <td>{{ m.dia }}</td>
+                <td>{{ m.mes }}</td>
+                <td>{{ m.ano }}</td>
+                <td>{{ m.sex }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
