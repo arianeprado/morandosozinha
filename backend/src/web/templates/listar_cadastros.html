@@ -1,27 +1,184 @@
-<div class="nav navbar-nav navbar-right" style="padding: 50px 8px 50px 250px" >
-    <div class="span12">
-        <h4 class="span10"><strong>Cadastros</strong></h4>
-        <table class="span10 table table-striped" style="text-align:center">
-            <th>Nome</th>
-            <th>Username</th>
-            <th>Email</th>
-            <th>Senha</th>
-            <th>dia</th>
-            <th>mês</th>
-            <th>ano</th>
-            <th>sex</th>
-            {% for m in cad %}
-            <tr>
-                <td>{{ m.firstname }}</td>
-                <td>{{ m.user }}</td>
-                <td>{{ m.email }}</td>
-                <td>{{ m.senha}}</td>
-                <td>{{ m.dia }}</td>
-                <td>{{ m.mes }}</td>
-                <td>{{ m.ano }}</td>
-                <td>{{ m.sex }}</td>
-            </tr>
-            {% endfor %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manual de Sobrevivência!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le styles -->
+    <link href="../static/css/bootstrap.css" rel="stylesheet">
+    <link href="../static/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="../static/css/docs.css" rel="stylesheet">
+    <link href="../static/js/google-code-prettify/prettify.css" rel="stylesheet">
+    <link href="../static/font/css/font-awesome.css" rel="stylesheet">
+
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9] -->
+
+    <script src="../static/js/html5shiv.js"></script>
+    <script src="../static/js/angular.min.js"></script>
+    <script src="../static/js/usercad.js"></script>
+
+    <script>
+        g_listaBlah = {{ cad|safe }};
+    </script>
+    <![endif]-->
+
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-146052-10']);
+        _gaq.push(['_trackPageview']);
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+</head>
+
+<body data-spy="scroll" data-target=".bs-docs-sidebar" ng-app="myApp">
+<!-- Menu Desktop -->
+<div class="navbar navbar-fixed-top navbar-inverse visible-desktop" style='margin:0;padding:0'>
+    <div class="navbar-inner">
+        <div class="container">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="navbar " style="margin:0;padding:0 ">
+                <div class="navbar-inner">
+                    <div class="container">
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                        <form class="navbar-search pull-left">
+                            <input type="text" class="search-query" style='margin-left:880px'placeholder="Digite para buscar..">
+                            <button type="submit" class="btn btn-inverse"><i class='fa fa-search fa-lg'></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class= 'row clearfix'>
+<div class= 'span12'>
+    <div class="nav navbar-nav navbar-center" style="padding: 30px 8px 30px 50px" ng-controller="myAppCtrl">
+        <table class="table table-bordered" style="padding: 0 8px 10px 0">
+            <strong>Cadastro</strong><i class='fa fa-edit fa-lg' style="margin-left:10px"></i><br><br>
+            <form role="form" method="post" action="{{ salvar_cadastro }}">
+                <div class="form-group">
+                    <div class="panel panel-default">
+                        <table class="table">
+                            <tr>
+                                <td><strong>Nome</strong></td>
+                                <td><strong>Username</strong></td>
+                                <td><strong>Email</strong></td>
+                                <td><strong>Senha</strong></td>
+                                <td><strong>Dia</strong></td>
+                                <td><strong>Mês</strong></td>
+                                <td><strong>Ano</strong></td>
+                                <td><strong>Sexo</strong></td>
+                                <td></td>
+                            </tr>
+
+                            <tr ng-repeat=" m in cadastro">
+                                    <td>
+                                        <span ng-hide="m.editando">{_ m.firstname _}</span>
+
+                                        <div ng-show="m.editando" class="input-group">
+                                            <input type="text" class="form-control input-sm" ng-model="m.firstname">
+                                        </div>
+                                    </td>
+                                <td>
+                                    <span ng-hide="m.editando">{_ m.user _} </span>
+
+                                    <div ng-show="m.editando" class="input-group">
+                                        <input type="text" class="form-control input-sm" ng-model="m.user">
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <span ng-hide="m.editando">{_ m.email _} </span>
+
+                                    <div ng-show="m.editando" class="input-group">
+                                        <input type="text" class="form-control input-sm" ng-model="m.email">
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <span ng-hide="m.editando">{_ m.senha _} </span>
+
+                                    <div ng-show="m.editando" class="input-group">
+                                        <input type="text" class="form-control input-sm" ng-model="m.senha">
+                                    </div>
+                                </td>
+                                <td>
+                                    <span ng-hide="m.editando">{_ m.dia _} </span>
+
+                                    <div ng-show="m.editando" class="input-group">
+                                        <input type="text" class="form-control input-sm" ng-model="m.dia">
+                                    </div>
+                                </td>
+                                <td>
+                                    <span ng-hide="m.editando">{_ m.mes _} </span>
+
+                                    <div ng-show="m.editando" class="input-group">
+                                        <input type="text" class="form-control input-sm" ng-model="m.mes">
+                                    </div>
+                                </td>
+                                <td>
+                                    <span ng-hide="m.editando">{_ m.ano _} </span>
+
+                                    <div ng-show="m.editando" class="input-group">
+                                        <input type="text" class="form-control input-sm" ng-model="m.ano">
+                                    </div>
+                                </td>
+                                <td>
+                                    <span ng-hide="m.editando">{_ m.sex _} </span>
+
+                                    <div ng-show="m.editando" class="input-group">
+                                        <input type="text" class="form-control input-sm" ng-model="m.sex">
+                                    </div>
+                                </td>
+
+                                <td width=100>
+                                    <button class="btn btn-primary btn-mini" ng-click="editarCadastro(m)" ng-hide="m.editando">
+                                        <i class="fa fa-pencil fa-lg"></i>
+                                    </button>
+                                    <button class="btn btn-success btn-mini" ng-click="confirmarEdicao(m)" ng-show="m.editando">
+                                        <i class="fa fa-check fa-lg"></i>
+                                    </button>
+                                    <button class="btn btn-danger btn-mini" title="Deletando Registro" ng-click="removerElemento(m,$index)" ng-hide="m.editando">
+                                        <i class="fa fa-trash-o fa-lg"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </form>
         </table>
     </div>
 </div>
+</div>
+
+
+
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="../static/js/jquery.js"></script>
+<script src="../static/js/bootstrap-dropdown.js"></script>
+<script src="../static/js/bootstrap-button.js"></script>
+<script src="../static/js/bootstrap-collapse.js"></script>
+
+</body>
+</html>

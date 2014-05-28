@@ -31,85 +31,94 @@
         })();
     </script>
 </head>
+<!-- SCM Music Player http://scmplayer.net -->
+<script type="text/javascript" src="http://scmplayer.net/script.js"
+        data-config="{'skin':'skins/black/skin.css','volume':25,'autoplay':true,'shuffle':true,'repeat':1,'placement':'top','showplaylist':false,'playlist':[{'title':' Phillip Phillips - Gone, Gone, Gone ','url':'https://www.youtube.com/watch?v=oozQ4yV__Vw'},{'title':'Arctic Monkeys - Suck It And See','url':'https://www.youtube.com/watch?v=H9svkVZ32Cg'},{'title':'Cher Lloyd - Want U Back','url':'https://www.youtube.com/watch?v=WUk8s9a-xGs'},{'title':'Jar Of Hearts','url':'https://www.youtube.com/watch?v=wTlUu0a9oWc'},{'title':'Let Her Go - Passenger ','url':'https://www.youtube.com/watch?v=meq0zmOb8EA'},{'title':'You & I ','url':'https://www.youtube.com/watch?v=_kqQDCxRCzM'}]}" ></script>
+<!-- SCM Music Player script end -->
 
-<body data-spy="scroll" data-target=".bs-docs-sidebar">
-<!-- Menu Desktop -->
-<div class="navbar navbar-fixed-top navbar-inverse visible-desktop" style='margin:0;padding:0'>
-    <div class="navbar-inner">
-        <div class="container">
-            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <div class="navbar " style="margin:0;padding:0 ">
-                <div class="navbar-inner">
-                    <div class="container">
-                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </a>
-                        <form class="navbar-search pull-left">
-                            <input type="text" class="search-query" style='margin-left:880px'placeholder="Digite para buscar..">
-                            <button type="submit" class="btn btn-inverse"><i class='fa fa-search fa-lg'></i></button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
+<div class= 'span12'>
+    <div class="nav navbar-nav navbar-right" style="padding: 50px 8px 50px 250px">
+        <table class="table table-bordered" style="padding: 0 8px 10px 0">
+            <tr>
+                <td>
+                    <strong>Cadastro</strong><i class='fa fa-edit fa-lg' style="margin-left:20px"></i><br><br>
+                    <form role="form" method="post" action="{{ salvar_cadastro }}">
+                        <div class="form-group">
+                            <p class="text-right"><h6>Nome Completo</h6></p><input class="input-xxlarge" type="text" name="firstname" size="500"></label></input>
+                            <p class="text-right"><h6>Nome do usuário</h6></p><input class="input-xxlarge" type="text" name="user" size="300"></label></input>
+                            <p class="text-right"><h6>E-mail</h6></p><input class="form-control input-xxlarge" type="email" name="email" placeholder="exemplo@email.com">
+                            <p class="text-right"><h6>Senha </h6></p><input type="password" class="input-xxlarge" type="text" name="senha" size="300"></label></input>
+                            <p class="text-right"><h6>Data de Nascimento<i class='fa fa-gift fa-lg' style="margin-left:10px"></i></h6></p>
+                            <select class="span1" name="dia">
+                                <option> - </option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                                <option>11</option>
+                                <option>12</option>
+                                <option>13</option>
+                                <option>14</option>
+                                <option>15</option>
+                                <option>16</option>
+                                <option>17</option>
+                                <option>18</option>
+                                <option>19</option>
+                                <option>20</option>
+                                <option>21</option>
+                                <option>22</option>
+                                <option>23</option>
+                                <option>24</option>
+                                <option>25</option>
+                                <option>26</option>
+                                <option>27</option>
+                                <option>28</option>
+                                <option>29</option>
+                                <option>30</option>
+                                <option>31</option>
+                            </select>
+                            <select class="span2" name="mes">
+                                <option> - </option>
+                                <option>Janeiro</option>
+                                <option>Fevereiro</option>
+                                <option>Março</option>
+                                <option>Abril</option>
+                                <option>Maio</option>
+                                <option>Junho</option>
+                                <option>Julho</option>
+                                <option>Agosto</option>
+                                <option>Setembro</option>
+                                <option>Outubro</option>
+                                <option>Novembro</option>
+                                <option>Dezembro</option>
+                            </select>
+                            <select class="span2" name="ano">
+                                <option> - </option>
+                                <option>1987</option>
+                                <option>1988</option>
+                                <option>1989</option>
+                                <option>1990</option>
+                                <option>1991</option>
+                                <option>1992</option>
+                                <option>1993</option>
+                                <option>1994</option>
+                            </select>
+                            <h6>Sexo</h6><label class="radio"><input type="radio" id="optionsRadios1" value="M" name="sex"checked>Masculino</label>
+                            <label class="radio"><input type="radio" id="optionsRadios2" value="F" name="sex" checked>Feminino</label><br>
+                            <button class="btn btn-info" value="Registrar" type="submit" style="margin-right:20px">Registrar</button>
+                            <a href="/" class="btn" style="margin-right:20px">Cancelar</a>
+                        </div>
+                    </form>
+                </td>
+            </tr>
+        </table>
     </div>
-</div>
-
-<div class="nav navbar-nav navbar-right" style="padding: 50px 8px 50px 250px">
-    <table class="table table-bordered" style="padding: 0 8px 10px 0">
-        <tr>
-            <td>
-                <strong>Cadastro</strong><i class='fa fa-edit fa-lg' style="margin-left:20px"></i><br><br>
-                <form role="form" method="post" action="{{ salvar_cadastro }}">
-                    <div class="form-group">
-                        <p class="text-right"><h6>Nome Completo</h6></p><input class="input-xxlarge" type="text" name="firstname" size="500"></label></input>
-                        <p class="text-right"><h6>Nome do usuário</h6></p><input class="input-xxlarge" type="text" name="user" size="300"></label></input>
-                        <p class="text-right"><h6>E-mail</h6></p><input class="form-control input-xxlarge" type="email" name="email" placeholder="exemplo@email.com">
-                        <p class="text-right"><h6>Senha </h6></p><input type="password" class="input-xxlarge" type="text" name="senha" size="300"></label></input>
-                        <p class="text-right"><h6>Data de Nascimento<i class='fa fa-gift fa-lg' style="margin-left:10px"></i></h6></p>
-                        <select class="span1" name="dia">
-                        <option></option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                        <option>6</option>
-                        <option>7</option>
-                        <option>8</option>
-                        <option>9</option>
-                        <option>10</option>
-                        </select>
-                        <select class="span2" name="mes">
-                        <option></option>
-                        <option>Janeiro</option>
-                        <option>Fevereiro</option>
-                        <option>Março</option>
-                        <option>Abril</option>
-                        <option>Maio</option>
-                        </select>
-                        <select class="span2" name="ano">
-                        <option></option>
-                        <option>1991</option>
-                        <option>1992</option>
-                        <option>1993</option>
-                        <option>1994</option>
-                        </select>
-                        <h6>Sexo</h6><label class="radio"><input type="radio" id="optionsRadios1" value="M" name="sex"checked>Masculino</label>
-                        <label class="radio"><input type="radio" id="optionsRadios2" value="F" name="sex" checked>Feminino</label><br>
-                        <button class="btn btn-info" value="Registrar" type="submit" style="margin-right:20px">Registrar</button>
-                        <a href="/cadastro" class="btn" style="margin-right:20px">Cancelar</a>
-                    </div>
-                </form>
-            </td>
-        </tr>
-    </table>
 </div>
 
 
